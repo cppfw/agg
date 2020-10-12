@@ -1,2 +1,0 @@
-# agg
-anti-grain geometry

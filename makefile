@@ -21,3 +21,6 @@ this_cxxflags += -I $(d)code/include
 this_cxxflags += -fPIC
 
 $(eval $(prorab-build-lib))
+
+
+$(eval $(call prorab-include, pkg-config/makefile))

@@ -1,0 +1,36 @@
+Source: libagg
+Section: libs
+Priority: extra
+Maintainer: Ivan Gagis <igagis@gmail.com>
+Build-Depends: debhelper (>= 9), prorab,
+		libc6-dev
+Build-Depends-Indep: doxygen
+Standards-Version: 3.9.2
+
+Package: libagg$(soname)
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: 2d vector graphics C++ library.
+ Anti-grain geometry is a vector graphics library which allow drawing to a memory buffer.
+
+Package: libagg$(soname)-dbg
+Section: debug
+Architecture: any
+Depends: libagg$(soname) (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for libagg$(soname) package.
+
+Package: libagg-dev
+Section: libdevel
+Architecture: any
+Depends: libagg$(soname) (= ${binary:Version}), libagg$(soname)-dbg (= ${binary:Version}), ${misc:Depends}
+Suggests: libagg-doc
+Description: development files for libagg$(soname) library.
+ Development files for anti-grain geometry library.
+
+Package: libagg-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Description: documentation for libagg library.
+ For more details see description to libagg-dev package.

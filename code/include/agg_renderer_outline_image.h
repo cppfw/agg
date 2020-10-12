@@ -22,7 +22,7 @@
 #include "agg_dda_line.h"
 #include "agg_rendering_buffer.h"
 #include "agg_clip_liang_barsky.h"
-
+#include "agg_color_rgba.h"
 
 namespace agg
 {

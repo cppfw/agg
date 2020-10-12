@@ -6,7 +6,7 @@
 
 anti-grain geometry
 
-This is a mirror of http://sourceforge.net/projects/agg
+This is a fork of http://sourceforge.net/projects/agg
 
 Forked from SVN revision `r134`.
 

@@ -1,0 +1,19 @@
+class Libantigrain < Formula
+  desc "Anti-grain geometry C++ library."
+  homepage "https://github.com/igagis/agg"
+  url "https://github.com/igagis/agg/archive/$(version).tar.gz"
+  sha256 "$(sha256)"
+
+  depends_on "prorab" => :build
+  depends_on "prorab-extra" => :build
+  depends_on "myci" => :build
+
+  def install
+    ENV['PATH'] += ':/usr/local/bin'
+    system "make", "install", "PREFIX=#{prefix}"
+  end
+
+  test do
+    system "make", "test"
+  end
+end

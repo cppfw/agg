@@ -7,6 +7,19 @@ Forked from SVN revision `r134`.
 
 The directory `code` contains the project files.
 
+== Istallation
+:package_name: agg
+
+. Setup your OS-preferred package system repo following link:https://github.com/igagis/pravila/blob/master/EnableRepo.adoc[this manual]
+. Install package
++
+- **deb** (Linux): **libantigrain-dev**
+- **homebrew** (MacOS X): **libantigrain**
+- **Android**: **io.github.igagis:{package_name}**
+- **cocoapods** (iOS): **{package_name}**
+- **Msys2** (Windows): **mingw-w64-i686-{package_name}**, **mingw-w64-x86_64-{package_name}**
+- **Nuget** (Windows, Visual Studio): **lib{package_name}**
+
 == License notice from original README file
 
 ```

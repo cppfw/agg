@@ -1,25 +1,26 @@
 PROJECT( MyAggApp )
 
-#modify this!!
-SET( AGG_DIR ${antigrain_BINARY_DIR} )
-
 # additional are modified Find routines
-SET ( CMAKE_MODULE_PATH "${MyAggApp_BINARY_DIR}" )
+SET ( CMAKE_MODULE_PATH "${MyAggApp_SOURCE_DIR}" )
 
 CMAKE_MINIMUM_REQUIRED( VERSION 2.4.8 )
+
+IF( COMMAND cmake_policy )
+    cmake_policy( SET CMP0003 NEW )
+ENDIF( COMMAND cmake_policy )
 
 # for the moment this decides the platform code.
 IF(WIN32)
     ADD_DEFINITIONS( -D_MSWVC_ -D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE )
     SET( WIN32GUI WIN32 )    
-    INCLUDE_DIRECTORIES( ${antigrain_SOURCE_DIR}/font_win32_tt )
-    INCLUDE_DIRECTORIES( ${antigrain_SOURCE_DIR}/font_freetype )
+    INCLUDE_DIRECTORIES( /home/ivan/prj/agg/code/font_win32_tt )
+    INCLUDE_DIRECTORIES( /home/ivan/prj/agg/code/font_freetype )
 ENDIF(WIN32)
 
 IF(UNIX)
     ADD_DEFINITIONS( -D__UNIX__  )
     SET( WIN32GUI "" )
-    INCLUDE_DIRECTORIES( ${antigrain_SOURCE_DIR}/font_freetype )
+    INCLUDE_DIRECTORIES( /home/ivan/prj/agg/code/font_freetype )
 
     FIND_PACKAGE(X11)
     IF(X11_FOUND)  
@@ -35,8 +36,7 @@ ENDIF(UNIX)
 
 FIND_PACKAGE( Agg )
 IF( AGG_FOUND )
-    #normally the next is needed, but since this very file is in Agg its source, all is already in place
-    #INCLUDE(${AGG_USE_FILE})
+    INCLUDE(${AGG_USE_FILE})
 ELSE( AGG_FOUND )
     MESSAGE( "AGG library was not found" )
 ENDIF( AGG_FOUND )
@@ -77,7 +77,7 @@ ADD_EXECUTABLE( my_demo ${WIN32GUI}
 )
 
 IF( agg_USE_AGG2D )
-    ADD_EXECUTABLE( agg2d_demo ${WIN32GUI}
+    ADD_EXECUTABLE( agg2_demo ${WIN32GUI}
         agg2d_demo.cpp
     )
 ENDIF( agg_USE_AGG2D )

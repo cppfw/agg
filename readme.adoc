@@ -5,6 +5,8 @@ This is a mirror of http://sourceforge.net/projects/agg
 
 Forked from SVN revision `r134`.
 
+The directory `code` contains the project files.
+
 == License notice from original README file
 
 ```

@@ -1,0 +1,9 @@
+Name: agg   # human-readable name
+Description: Anti-grain geometry # human-readable description
+Version: $(version)
+URL: https://github.com/igagis/agg
+Requires:
+Conflicts:
+Libs: -lantigrain
+Libs.private:
+Cflags:

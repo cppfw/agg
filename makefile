@@ -2,7 +2,7 @@ include prorab.mk
 
 this_out_dir := build
 
-this_name := agg
+this_name := $(shell cat $(d)name.txt)
 
 this_soname := $(shell cat $(d)soname.txt)
 

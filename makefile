@@ -20,7 +20,8 @@ this_srcs += $(patsubst $(d)%,%,$(wildcard $(d)code/src/*.cpp))
 this_cxxflags += -I $(d)code/include
 this_cxxflags += -fPIC
 
-$(eval $(prorab-build-lib))
+this_ldlibs += -lstdc++
 
+$(eval $(prorab-build-lib))
 
 $(eval $(call prorab-include, pkg-config/makefile))

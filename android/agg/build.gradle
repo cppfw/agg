@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.library'
+}
+apply plugin: 'com.ydq.android.gradle.native-aar.export' // must go after android gradle plugin
+apply plugin: 'com.ydq.android.gradle.native-aar.import' // must go after android gradle plugin
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        externalNativeBuild {
+            cmake {
+                targets "agg"
+            }
+        }
+    }
+
+    nativeBundleExport {
+        headerDir = "${project.projectDir}/../../code/include/"
+        bundleStatic = true
+        includeHeaderFilter.add("**/*.h")
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt" // Provides a relative path to your CMake build script.
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+}
+
+
+
+// copy and rename release AAR to unified name
+task copy_aar(type: Copy) {
+    from file("build/outputs/aar/")
+    into file("../")
+    include("*-static-release.aar")
+    rename { String fileName ->
+        fileName.replace("static-release.aar", "\$(version).aar.in")
+    }
+}
+
+afterEvaluate {
+    copy_aar.dependsOn(assembleRelease)
+}

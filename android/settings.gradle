@@ -1,0 +1,3 @@
+include ':agg'
+include ':app'
+rootProject.name = "agg"

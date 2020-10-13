@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.4.1)
 set(name agg)
 file(GLOB srcs "../../code/src/*.cpp")
 include (${ANDROID_GRADLE_NATIVE_BUNDLE_PLUGIN_MK})
+
+include_directories(../../code/include)
+
 add_library(
         ${name}
         STATIC

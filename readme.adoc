@@ -1,7 +1,7 @@
 = agg
 
 |====
-| link:https://github.com/igagis/agg/releases[image:https://img.shields.io/github/tag/igagis/agg.svg[releases]] | link:https://travis-ci.org/igagis/agg[image:https://travis-ci.org/igagis/agg.svg?branch=master[Travis CI status]]
+| link:https://github.com/igagis/agg/releases[image:https://img.shields.io/github/tag/igagis/agg.svg[releases]] | link:https://travis-ci.org/igagis/agg[image:https://travis-ci.org/igagis/agg.svg?branch=master[Travis CI status]] | link:https://ci.appveyor.com/project/igagis/agg[image:https://ci.appveyor.com/api/projects/status/772h2dvsxmm5h68g/branch/main?svg=true[Appveyor status]]
 |====
 
 anti-grain geometry

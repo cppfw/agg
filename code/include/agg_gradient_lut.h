@@ -151,7 +151,16 @@ namespace agg
         { 
             return m_color_lut[i]; 
         }
-
+        color_type& operator[] (unsigned i)
+        {
+            return m_color_lut[i];
+        }
+        void premultiply()
+        {
+            for(unsigned i = 0; i != color_lut_size; ++i){
+                m_color_lut[i].premultiply();
+            }
+        }
     private:
         //--------------------------------------------------------------------
         struct color_point

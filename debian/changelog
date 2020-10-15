@@ -1,9 +1,9 @@
-libantigrain (2.7.1) UNRELEASED; urgency=medium
+libantigrain (2.7.1) unstable; urgency=medium
 
   * add non-const agg_gradient_lut::operator[] and
     agg_gradient_lut::premultiply()
 
- -- Ivan Gagis <igagis@gmail.com>  Thu, 15 Oct 2020 18:16:06 +0300
+ -- Ivan Gagis <igagis@gmail.com>  Thu, 15 Oct 2020 18:39:00 +0300
 
 libantigrain (2.7.0) unstable; urgency=low
 

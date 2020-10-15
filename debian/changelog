@@ -1,5 +1,5 @@
-libantigrain (2.7.0) UNRELEASED; urgency=low
+libantigrain (2.7.0) unstable; urgency=low
 
   * Initial release version 2.7
 
- -- Ivan Gagis <igagis@gmail.com>  Mon, 12 Oct 2020 16:41:00 +0200
+ -- Ivan Gagis <igagis@gmail.com>  Thu, 15 Oct 2020 14:07:13 +0300

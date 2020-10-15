@@ -220,7 +220,7 @@ namespace agg
         int fx2 = x2 & poly_subpixel_mask;
 
         int delta, p, first;
-        long long dx;
+        int dx;
         int incr, lift, mod, rem;
 
         //trivial case. Happens often
@@ -245,7 +245,7 @@ namespace agg
         first = poly_subpixel_scale;
         incr  = 1;
 
-        dx = (long long)x2 - (long long)x1;
+        dx = x2 - x1;
 
         if(dx < 0)
         {
@@ -255,8 +255,8 @@ namespace agg
             dx    = -dx;
         }
 
-        delta = (int)(p / dx);
-        mod   = (int)(p % dx);
+        delta = p / dx;
+        mod   = p % dx;
 
         if(mod < 0)
         {
@@ -274,8 +274,8 @@ namespace agg
         if(ex1 != ex2)
         {
             p     = poly_subpixel_scale * (y2 - y1 + delta);
-            lift  = (int)(p / dx);
-            rem   = (int)(p % dx);
+            lift  = p / dx;
+            rem   = p % dx;
 
             if (rem < 0)
             {
@@ -320,17 +320,17 @@ namespace agg
     {
         enum dx_limit_e { dx_limit = 16384 << poly_subpixel_shift };
 
-        long long dx = (long long)x2 - (long long)x1;
+        int dx = x2 - x1;
 
         if(dx >= dx_limit || dx <= -dx_limit)
         {
-            int cx = (int)(((long long)x1 + (long long)x2) >> 1);
-            int cy = (int)(((long long)y1 + (long long)y2) >> 1);
+            int cx = ((x1 + x2) >> 1);
+            int cy = ((y1 + y2) >> 1);
             line(x1, y1, cx, cy);
             line(cx, cy, x2, y2);
         }
 
-        long long dy = (long long)y2 - (long long)y1;
+        int dy = y2 - y1;
         int ex1 = x1 >> poly_subpixel_shift;
         int ex2 = x2 >> poly_subpixel_shift;
         int ey1 = y1 >> poly_subpixel_shift;
@@ -340,7 +340,7 @@ namespace agg
 
         int x_from, x_to;
         int rem, mod, lift, delta, first, incr;
-        long long p;
+        int p;
 
         if(ex1 < m_min_x) m_min_x = ex1;
         if(ex1 > m_max_x) m_max_x = ex1;
@@ -417,8 +417,8 @@ namespace agg
             dy    = -dy;
         }
 
-        delta = (int)(p / dy);
-        mod   = (int)(p % dy);
+        delta = p / dy;
+        mod   = p % dy;
 
         if(mod < 0)
         {
@@ -435,8 +435,8 @@ namespace agg
         if(ey1 != ey2)
         {
             p     = poly_subpixel_scale * dx;
-            lift  = (int)(p / dy);
-            rem   = (int)(p % dy);
+            lift  = p / dy;
+            rem   = p % dy;
 
             if(rem < 0)
             {

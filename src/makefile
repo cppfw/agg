@@ -6,9 +6,9 @@ this_name := $(shell cat $(d)../name.txt)
 
 this_soname := $(shell cat $(d)../soname.txt)
 
-this_headers_dir := code/include/
+this_headers_dir := agg/include
 
-this_install_cxx_hdrs := $(patsubst $(d)%,%,$(wildcard $(d)agg/include/*.h))
+this_install_cxx_hdrs := $(patsubst $(d)%,%,$(wildcard $(d)$(this_headers_dir)/*.h))
 
 # exclude gpc.h dependent functionality from the library
 this_install_cxx_hdrs := $(filter-out %agg_conv_gpc.h,$(this_install_cxx_hdrs))

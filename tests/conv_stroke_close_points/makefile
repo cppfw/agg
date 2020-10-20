@@ -9,6 +9,7 @@ this_no_install := true
 this_agg_name := $(shell cat $(d)../../name.txt)
 
 this_cxxflags += -g
+this_cxxflags += -std=c++11
 
 this_ldflags += -L $(d)../../src/build
 this_ldlibs += -l$(this_agg_name)

@@ -38,7 +38,7 @@ nuget{
 		//this is needed to put headers in the base folder
 		nestedInclude: {
 			#destination = ${d_include}agg;
-			"..\code\include\*.h"
+			"..\src\agg\include\*.h"
 		};
 
 		//==== v140 tools =====

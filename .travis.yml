@@ -118,7 +118,7 @@ before_script:
 - if [ "$TRAVIS_JOB_NAME" == "ios" ]; then
     curl -L https://github.com/zackslash/Xcode-Proj-Adder/raw/master/bin/XcodeProjAdder -O &&
     chmod +x XcodeProjAdder &&
-    (cd xcode/$PACKAGE_NAME && ../../XcodeProjAdder -XCP $PACKAGE_NAME.xcodeproj -SCSV `echo $(ls ../../code/src/*.cpp) | sed -E -e 's/ /,/g'`)
+    (cd xcode/$PACKAGE_NAME && ../../XcodeProjAdder -XCP $PACKAGE_NAME.xcodeproj -SCSV `echo $(ls ../../src/agg/src/*.cpp) | sed -E -e 's/ /,/g'`)
   fi
 - if [ "$TRAVIS_JOB_NAME" == "msys2" ]; then
     $msys2 "myci-apply-version.sh -v \$(myci-deb-version.sh debian/changelog) msys2/PKGBUILD.in";
@@ -133,7 +133,7 @@ script:
   fi
 - if [ "$TRAVIS_JOB_NAME" == "ios" ]; then
     xcodebuild -workspace xcode/$PACKAGE_NAME.xcworkspace -scheme $PACKAGE_NAME CONFIGURATION_BUILD_DIR=../build -configuration Release &&
-    myci-create-zip-package.sh -h code/include///agg -f xcode/build/lib$PACKAGE_NAME.a///lib/ios -f LICENSE $PACKAGE_NAME-$PACKAGE_VERSION.zip;
+    myci-create-zip-package.sh -h src/agg/include///agg -f xcode/build/lib$PACKAGE_NAME.a///lib/ios -f LICENSE $PACKAGE_NAME-$PACKAGE_VERSION.zip;
   fi
 - if [ "$TRAVIS_JOB_NAME" == "android" ]; then
     (cd android && ./gradlew copy_aar) &&

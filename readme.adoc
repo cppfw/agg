@@ -10,7 +10,7 @@ This is a fork of http://sourceforge.net/projects/agg
 
 Forked from SVN revision `r134`.
 
-The directory `code` contains the project files.
+The directory `src/agg` contains the forked project files.
 
 == Istallation
 :package_name: agg

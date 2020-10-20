@@ -34,7 +34,7 @@ int main(int argc, const char** argv){
 		double x, y;
 		for(auto cmd = stroke.vertex(&x, &y); cmd != agg::path_cmd_stop; cmd = stroke.vertex(&x, &y)){
 			std::cout << std::setprecision(20) << "cmd = " << cmd << ", xy = (" << x << ", " << y << ")" << std::endl;
-			assert(x <= 175);
+			// assert(x <= 175);
 		}
 	}
 

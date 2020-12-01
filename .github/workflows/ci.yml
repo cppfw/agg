@@ -33,7 +33,7 @@ jobs:
       - name: install ci tools
         run: apt install --assume-yes devscripts equivs myci
       - name: prepare debian package
-        run: myci-deb-prepare.sh
+        run: myci-deb-prepare.sh --soname $(cat soname.txt)
       - name: install deps
         run: myci-deb-install-build-deps.sh
       - name: build

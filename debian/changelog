@@ -1,3 +1,9 @@
+libantigrain (2.7.4) unstable; urgency=medium
+
+  * github actions
+
+ -- Ivan Gagis <igagis@gmail.com>  Tue, 01 Dec 2020 03:06:47 +0200
+
 libantigrain (2.7.3) unstable; urgency=medium
 
   * fix MSVS compiler warnings

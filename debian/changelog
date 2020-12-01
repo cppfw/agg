@@ -1,3 +1,9 @@
+libantigrain (2.7.6) unstable; urgency=medium
+
+  * fix soname
+
+ -- Ivan Gagis <igagis@gmail.com>  Wed, 02 Dec 2020 00:35:22 +0200
+
 libantigrain (2.7.5) unstable; urgency=medium
 
   * github actions

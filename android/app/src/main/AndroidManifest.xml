@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.igagis.agg">
+    package="io.github.cppfw.agg">
 
     <application
         android:allowBackup="true"

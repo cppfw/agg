@@ -18,9 +18,9 @@ nuget{
 		title: Anti-grain geometry;
 		authors: {Maxim Shemanarev};
 		owners: {Ivan Gagis};
-		licenseUrl: "https://raw.githubusercontent.com/igagis/agg/master/LICENSE";
-		projectUrl: "https://github.com/igagis/agg";
-		iconUrl: "https://github.com/igagis/agg/blob/master/logo.svg";
+		licenseUrl: "https://raw.githubusercontent.com/cppfw/agg/master/LICENSE";
+		projectUrl: "https://github.com/cppfw/agg";
+		iconUrl: "https://github.com/cppfw/agg/blob/master/logo.svg";
 		requireLicenseAcceptance:false;
 		summary: C++ SVG rendering library;
 

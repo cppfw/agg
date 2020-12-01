@@ -1,7 +1,9 @@
-= agg
+:name: agg
+
+= {name}
 
 |====
-| link:https://github.com/igagis/agg/releases[image:https://img.shields.io/github/tag/igagis/agg.svg[releases]] | link:https://travis-ci.org/igagis/agg[image:https://travis-ci.org/igagis/agg.svg?branch=master[Travis CI status]] | link:https://ci.appveyor.com/project/igagis/agg[image:https://ci.appveyor.com/api/projects/status/772h2dvsxmm5h68g/branch/master?svg=true[Appveyor status]]
+| link:https://github.com/cppfw/{name}/releases[image:https://img.shields.io/github/tag/cppfw/{name}.svg[releases]] | link:https://github.com/cppfw/{name}/actions[image:https://github.com/cppfw/{name}/workflows/ci/badge.svg[ci status]]
 |====
 
 anti-grain geometry
@@ -15,12 +17,12 @@ The directory `src/agg` contains the forked project files.
 == Istallation
 :package_name: agg
 
-. Setup your OS-preferred package system repo following link:https://github.com/igagis/pravila/blob/master/EnableRepo.adoc[this manual]
+. Setup your OS-preferred package system repo following link:https://github.com/cppfw/wiki/blob/master/EnableRepo.adoc[this manual]
 . Install package
 +
 - **deb** (Linux): **libantigrain-dev**
 - **homebrew** (MacOS X): **libantigrain**
-- **Android**: **io.github.igagis:{package_name}**
+- **Android**: **io.github.cppfw:{package_name}**
 - **cocoapods** (iOS): **{package_name}**
 - **Msys2** (Windows): **mingw-w64-i686-{package_name}**, **mingw-w64-x86_64-{package_name}**
 - **Nuget** (Windows, Visual Studio): **lib{package_name}**

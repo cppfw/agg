@@ -1,4 +1,4 @@
-package io.github.igagis.agg;
+package io.github.cppfw.agg;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("io.github.igagis.agg", appContext.getPackageName());
+        assertEquals("io.github.cppfw.agg", appContext.getPackageName());
     }
 }

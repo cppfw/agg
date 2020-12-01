@@ -1,7 +1,7 @@
 Name: agg   # human-readable name
 Description: Anti-grain geometry # human-readable description
 Version: $(version)
-URL: https://github.com/igagis/agg
+URL: https://github.com/cppfw/agg
 Requires:
 Conflicts:
 Libs: -lantigrain

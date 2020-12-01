@@ -1,4 +1,4 @@
-package io.github.igagis.agg;
+package io.github.cppfw.agg;
 
 import androidx.appcompat.app.AppCompatActivity;
 

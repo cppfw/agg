@@ -17,7 +17,6 @@
 //
 //----------------------------------------------------------------------------
 
-#include <iostream>
 #include <cmath>
 #include "agg_vcgen_dash.h"
 #include "agg_shorten_path.h"
@@ -121,7 +120,6 @@ namespace agg
             else
             {
                 m_closed = get_close_flag(cmd);
-				std::cout << "vcgen_dash::add_vertex() m_closed = " << m_closed << std::endl;
             }
         }
     }

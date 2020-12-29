@@ -40,7 +40,9 @@ namespace agg
         {
             initial,
             ready,
-            polyline,
+            skip_first_dash, // see description of 'first_dash_skept' flag below for info
+            dashes,
+            first_dash, // see description of 'first_dash_skept' flag below for info
             stop
         };
 
@@ -70,6 +72,9 @@ namespace agg
 
         void calc_dash_start(double ds);
 
+        void init_state_vars();
+        unsigned next_dash_vertex(double* x, double* y);
+
         double             m_dashes[max_dashes];
         double             m_total_dash_len;
         unsigned           m_num_dashes;
@@ -85,6 +90,11 @@ namespace agg
         unsigned       m_closed;
         status_e       m_status;
         unsigned       m_src_vertex;
+
+        // For the case of closed paths the last dash should be merged with the first one.
+        // To achieve that, if the path is closed, we skip the first dash and append it ti the last one.
+        // This state flag indicates that the first dash has been skept.
+        bool first_dash_skept;
     };
 
 

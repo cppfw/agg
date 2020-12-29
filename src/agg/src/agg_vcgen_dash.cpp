@@ -17,8 +17,6 @@
 //
 //----------------------------------------------------------------------------
 
-#include <iostream>
-
 #include <cmath>
 #include "agg_vcgen_dash.h"
 #include "agg_shorten_path.h"
@@ -149,7 +147,6 @@ namespace agg
 
         if(m_curr_rest > dash_rest)
         {
-            std::cout << "curr rest > dash rest" << std::endl;
             m_curr_rest -= dash_rest;
             ++m_curr_dash;
             if(m_curr_dash >= m_num_dashes) m_curr_dash = 0;
@@ -167,7 +164,6 @@ namespace agg
             m_curr_rest = m_v1->dist;
             if(m_closed)
             {
-                std::cout << "m_src_vertices.size() = " << m_src_vertices.size() << ", m_src_vertex = " << m_src_vertex << std::endl;
                 if(m_src_vertex > m_src_vertices.size())
                 {
                     m_status = stop;
@@ -225,11 +221,9 @@ namespace agg
                 this->init_state_vars();
 
                 if(m_closed && (m_curr_dash & 1) == 0){ // if path is closed and the first dash-band is not a gap
-                    std::cout << "skip first dash" << std::endl;
                     this->m_status = skip_first_dash;
                     this->first_dash_skept = true;
                 }else{
-                    std::cout << "no skip first dash" << std::endl;
                     this->m_status = dashes;
                     this->first_dash_skept = false;
                 }
@@ -241,21 +235,16 @@ namespace agg
             case skip_first_dash:
                 {
                     unsigned cmd = this->next_dash_vertex(x, y);
-                    std::cout << "cmd = " << cmd << std::endl;
                     if(this->m_status == stop){ // if looped
                         if(this->first_dash_skept){
                             // the first dash has been skept in the beginning, so still need to return it in the end
-                            
-                            std::cout << "first_dash" << std::endl;
                             m_status = first_dash;
-
                             this->init_state_vars();
                         }
 
                     }else if(cmd == path_cmd_line_to){
                         cmd = path_cmd_move_to;
                     }else if(this->m_status == skip_first_dash){ // if status did not change
-                        std::cout << "switching to dashes" << std::endl;
                         this->m_status = dashes;
                     }
                     return cmd;
@@ -276,10 +265,7 @@ namespace agg
                     if(this->m_status == stop){ // if looped
                         if(this->first_dash_skept){
                             // the first dash has been skept in the beginning, so still need to return it in the end
-                                
-                            std::cout << "first_dash" << std::endl;
                             m_status = first_dash;
-
                             this->init_state_vars();
                         }
                     }

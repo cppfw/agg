@@ -1,3 +1,9 @@
+libantigrain (2.7.7) unstable; urgency=medium
+
+  * build for ubuntu focal
+
+ -- Ivan Gagis <igagis@gmail.com>  Fri, 18 Dec 2020 02:16:38 +0200
+
 libantigrain (2.7.6) unstable; urgency=medium
 
   * fix soname

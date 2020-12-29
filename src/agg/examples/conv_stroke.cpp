@@ -38,6 +38,7 @@ class the_application : public agg::platform_support
     agg::slider_ctrl<color_type> m_width;
     agg::slider_ctrl<color_type> m_miter_limit;
     agg::slider_ctrl<color_type> dash_offset_ctrl;
+    agg::slider_ctrl<color_type> dash_length_ctrl;
 
 
 public:
@@ -48,7 +49,8 @@ public:
         m_cap(10.0, 80.0 + 10.0, 133.0, 80.0 + 80.0, !flip_y),
         m_width(130 + 10.0, 10.0, 500.0 - 10.0, 10.0 + 8.0, !flip_y),
         m_miter_limit(130 + 10.0, 20.0 + 10.0, 500.0 - 10.0, 20.0 + 10.0 + 8.0, !flip_y),
-        dash_offset_ctrl(130 + 10.0, 20.0 + 20.0 + 10.0, 500.0 - 10.0, 20.0 + 20.0 + 10.0 + 8.0, !flip_y)
+        dash_offset_ctrl(230 + 10.0, 20.0 + 20.0 + 10.0, 500.0 - 10.0, 20.0 + 20.0 + 10.0 + 8.0, !flip_y),
+        dash_length_ctrl(280 + 10.0, 20.0 + 20.0 + 20.0 + 10.0, 500.0 - 10.0, 20.0 + 20.0 + 20.0 + 10.0 + 8.0, !flip_y)
     {
         m_x[0] = 57  + 100; m_y[0] = 60;
         m_x[1] = 369 + 100; m_y[1] = 170;
@@ -84,11 +86,17 @@ public:
         this->dash_offset_ctrl.value(0);
         this->dash_offset_ctrl.label("Dash offset=%1.2f");
 
+        add_ctrl(this->dash_length_ctrl);
+        this->dash_length_ctrl.range(0, 500.0);
+        this->dash_length_ctrl.value(20);
+        this->dash_length_ctrl.label("Dash length=%1.2f");
+
         m_join.no_transform();
         m_cap.no_transform();
         m_width.no_transform();
         m_miter_limit.no_transform();
         this->dash_offset_ctrl.no_transform();
+        this->dash_length_ctrl.no_transform();
     }
 
     virtual void on_init()
@@ -157,7 +165,7 @@ public:
         poly2.width(m_width.value() / 5.0);
         poly2.line_cap(cap);
         poly2.line_join(join);
-        poly2_dash.add_dash(20.0, m_width.value() / 2.5);
+        poly2_dash.add_dash(this->dash_length_ctrl.value(), m_width.value() / 2.5);
         poly2_dash.dash_start(this->dash_offset_ctrl.value());
         ras.add_path(poly2);
         agg::render_scanlines_aa_solid(ras, sl, renb, agg::rgba(0,0,0.3));
@@ -177,6 +185,7 @@ public:
         agg::render_ctrl(ras, sl, renb, m_width);
         agg::render_ctrl(ras, sl, renb, m_miter_limit);
         agg::render_ctrl(ras, sl, renb, this->dash_offset_ctrl);
+        agg::render_ctrl(ras, sl, renb, this->dash_length_ctrl);
     }
 
 

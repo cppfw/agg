@@ -1,3 +1,10 @@
+libantigrain (2.8.0) UNRELEASED; urgency=medium
+
+  * proper drawing of dashed closed paths (last dash merges with first
+    dash)
+
+ -- Ivan Gagis <igagis@gmail.com>  Tue, 29 Dec 2020 19:29:53 +0200
+
 libantigrain (2.7.7) unstable; urgency=medium
 
   * build for ubuntu focal

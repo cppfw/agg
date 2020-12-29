@@ -89,6 +89,7 @@ namespace agg
         unsigned       m_closed;
         status_e       m_status;
         unsigned       m_src_vertex;
+        bool first_dash_skept;
     };
 
 

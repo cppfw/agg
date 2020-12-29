@@ -170,23 +170,16 @@ namespace agg
                 std::cout << "m_src_vertices.size() = " << m_src_vertices.size() << ", m_src_vertex = " << m_src_vertex << std::endl;
                 if(m_src_vertex > m_src_vertices.size())
                 {
-                    m_src_vertex = 1;
-                    this->calc_dash_start(this->m_dash_start); // this will init m_curr_dash
-                    if((m_curr_dash & 1) == 0){ // if first dash-band is not a gap
-                        // the first dash has been skept in the beginning, so still need to return it in the end
-                        std::cout << "first_dash" << std::endl;
-                        m_status = first_dash;
-                    }else{
-                        std::cout << "stop" << std::endl;
-                        m_status = stop;
-                        return cmd;
-                    }
+                    m_status = stop;
                 }
-                m_v2 = &m_src_vertices
-                [
-                    (m_src_vertex >= m_src_vertices.size()) ? 0 : 
-                    m_src_vertex
-                ];
+                else
+                {
+                    m_v2 = &m_src_vertices
+                    [
+                        (m_src_vertex >= m_src_vertices.size()) ? 0 : 
+                        m_src_vertex
+                    ];
+                }
             }
             else
             {
@@ -229,9 +222,11 @@ namespace agg
                 if(m_closed && (m_curr_dash & 1) == 0){ // if path is closed and the first dash-band is not a gap
                     std::cout << "skip first dash" << std::endl;
                     this->m_status = skip_first_dash;
+                    this->first_dash_skept = true;
                 }else{
                     std::cout << "no skip first dash" << std::endl;
                     this->m_status = dashes;
+                    this->first_dash_skept = false;
                 }
 
                 *x = m_v1->x;
@@ -242,7 +237,22 @@ namespace agg
                 {
                     unsigned cmd = this->next_dash_vertex(x, y);
                     std::cout << "cmd = " << cmd << std::endl;
-                    if(cmd == path_cmd_line_to){
+                    if(this->m_status == stop){ // if looped
+                        if(this->first_dash_skept){
+                            // the first dash has been skept in the beginning, so still need to return it in the end
+                            
+                            std::cout << "first_dash" << std::endl;
+                            m_status = first_dash;
+
+                            // TODO: repeats
+                            m_src_vertex = 1;
+                            m_v1 = &m_src_vertices[0];
+                            m_v2 = &m_src_vertices[1];
+                            m_curr_rest = m_v1->dist;
+                            if(m_dash_start >= 0.0) calc_dash_start(m_dash_start); // this will init m_curr_dash
+                        }
+
+                    }else if(cmd == path_cmd_line_to){
                         cmd = path_cmd_move_to;
                     }else if(this->m_status == skip_first_dash){ // if status did not change
                         std::cout << "switching to dashes" << std::endl;
@@ -255,12 +265,31 @@ namespace agg
                     unsigned cmd = this->next_dash_vertex(x, y);
                     if(cmd != path_cmd_line_to){
                         cmd = path_cmd_stop;
+                    }else if(m_status == stop){ // if looped
+                        cmd = path_cmd_end_poly | path_flags_close;
                     }
                     return cmd;
                 }
             case dashes:
-                return this->next_dash_vertex(x, y);
+                {
+                    unsigned cmd = this->next_dash_vertex(x, y);
+                    if(this->m_status == stop){ // if looped
+                        if(this->first_dash_skept){
+                            // the first dash has been skept in the beginning, so still need to return it in the end
+                                
+                            std::cout << "first_dash" << std::endl;
+                            m_status = first_dash;
 
+                            // TODO: repeats
+                            m_src_vertex = 1;
+                            m_v1 = &m_src_vertices[0];
+                            m_v2 = &m_src_vertices[1];
+                            m_curr_rest = m_v1->dist;
+                            if(m_dash_start >= 0.0) calc_dash_start(m_dash_start); // this will init m_curr_dash
+                        }
+                    }
+                    return cmd;
+                }
             case stop:
                 cmd = path_cmd_stop;
                 break;

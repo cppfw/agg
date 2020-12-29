@@ -72,6 +72,7 @@ namespace agg
 
         void calc_dash_start(double ds);
 
+        void init_state_vars();
         unsigned next_dash_vertex(double* x, double* y);
 
         double             m_dashes[max_dashes];

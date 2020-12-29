@@ -197,6 +197,15 @@ namespace agg
     }
 
     //------------------------------------------------------------------------
+    void vcgen_dash::init_state_vars(){
+        m_src_vertex = 1;
+        m_v1 = &m_src_vertices[0];
+        m_v2 = &m_src_vertices[1];
+        m_curr_rest = m_v1->dist;
+        if(m_dash_start >= 0.0) calc_dash_start(m_dash_start);
+    }
+
+    //------------------------------------------------------------------------
     unsigned vcgen_dash::vertex(double* x, double* y)
     {
         unsigned cmd = path_cmd_move_to;
@@ -213,11 +222,7 @@ namespace agg
                     cmd = path_cmd_stop;
                     break;
                 }
-                m_src_vertex = 1;
-                m_v1 = &m_src_vertices[0];
-                m_v2 = &m_src_vertices[1];
-                m_curr_rest = m_v1->dist;
-                if(m_dash_start >= 0.0) calc_dash_start(m_dash_start);
+                this->init_state_vars();
 
                 if(m_closed && (m_curr_dash & 1) == 0){ // if path is closed and the first dash-band is not a gap
                     std::cout << "skip first dash" << std::endl;
@@ -244,12 +249,7 @@ namespace agg
                             std::cout << "first_dash" << std::endl;
                             m_status = first_dash;
 
-                            // TODO: repeats
-                            m_src_vertex = 1;
-                            m_v1 = &m_src_vertices[0];
-                            m_v2 = &m_src_vertices[1];
-                            m_curr_rest = m_v1->dist;
-                            if(m_dash_start >= 0.0) calc_dash_start(m_dash_start); // this will init m_curr_dash
+                            this->init_state_vars();
                         }
 
                     }else if(cmd == path_cmd_line_to){
@@ -280,12 +280,7 @@ namespace agg
                             std::cout << "first_dash" << std::endl;
                             m_status = first_dash;
 
-                            // TODO: repeats
-                            m_src_vertex = 1;
-                            m_v1 = &m_src_vertices[0];
-                            m_v2 = &m_src_vertices[1];
-                            m_curr_rest = m_v1->dist;
-                            if(m_dash_start >= 0.0) calc_dash_start(m_dash_start); // this will init m_curr_dash
+                            this->init_state_vars();
                         }
                     }
                     return cmd;

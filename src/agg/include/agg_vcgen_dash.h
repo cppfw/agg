@@ -40,7 +40,9 @@ namespace agg
         {
             initial,
             ready,
-            polyline,
+            skip_first_dash,
+            dashes,
+            first_dash,
             stop
         };
 

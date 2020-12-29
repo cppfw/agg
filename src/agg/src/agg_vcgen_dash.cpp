@@ -155,17 +155,23 @@ namespace agg
                     cmd = path_cmd_stop;
                     break;
                 }
-                m_status = polyline;
                 m_src_vertex = 1;
                 m_v1 = &m_src_vertices[0];
                 m_v2 = &m_src_vertices[1];
                 m_curr_rest = m_v1->dist;
+                if(m_dash_start >= 0.0) calc_dash_start(m_dash_start);
+
+                if(m_closed && m_curr_dash & 1 == 0){ // if path is closed and the first dash-band is not a gap
+                    this->m_status = skip_first_dash;
+                }else{
+                    this->m_status = dashes;
+                }
+
                 *x = m_v1->x;
                 *y = m_v1->y;
-                if(m_dash_start >= 0.0) calc_dash_start(m_dash_start);
                 return path_cmd_move_to;
 
-            case polyline:
+            case dashes:
                 {
                     double dash_rest = m_dashes[m_curr_dash] - m_curr_dash_start;
 

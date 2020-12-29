@@ -1,3 +1,9 @@
+libantigrain (2.8.1) unstable; urgency=medium
+
+  * deployment fix
+
+ -- Ivan Gagis <igagis@gmail.com>  Wed, 30 Dec 2020 00:53:25 +0200
+
 libantigrain (2.8.0) unstable; urgency=medium
 
   * proper drawing of dashed closed paths (last dash merges with first

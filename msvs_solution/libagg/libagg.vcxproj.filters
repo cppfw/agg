@@ -15,157 +15,82 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_arc.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_arrowhead.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_bezier_arc.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_bspline.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_color_rgba.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_curves.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_embedded_raster_fonts.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_gsv_text.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_image_filters.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_line_aa_basics.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_line_profile_aa.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_rounded_rect.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_sqrt_tables.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_trans_affine.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_trans_double_path.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_trans_single_path.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_trans_warp_magnifier.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vcgen_bspline.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vcgen_contour.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vcgen_dash.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vcgen_markers_term.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vcgen_smooth_poly1.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vcgen_stroke.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vpgen_clip_polygon.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vpgen_clip_polyline.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\src\*.cpp">
+    <ClCompile Include="..\..\src\agg\src\agg_vpgen_segmentator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

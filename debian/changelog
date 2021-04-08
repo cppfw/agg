@@ -1,3 +1,9 @@
+libantigrain (2.8.3) unstable; urgency=medium
+
+  * deploy to jfrog
+
+ -- Ivan Gagis <igagis@gmail.com>  Fri, 09 Apr 2021 01:40:49 +0300
+
 libantigrain (2.8.2) unstable; urgency=medium
 
   * msvs: disable whole program optimization

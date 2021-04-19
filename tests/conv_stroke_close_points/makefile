@@ -1,4 +1,5 @@
 include prorab.mk
+include prorab-test.mk
 
 this_name := tests
 
@@ -20,6 +21,9 @@ $(eval $(prorab-build-app))
 
 $(prorab_this_name): $(abspath $(d)../../src/build/lib$(this_agg_name)$(dot_so))
 
-include $(d)../test_target.mk
+this_test_cmd := $(prorab_this_name)
+this_test_deps := $(prorab_this_name)
+this_test_ld_path := ../../src/build
+$(eval $(prorab-test))
 
 $(eval $(call prorab-include, ../../src/makefile))

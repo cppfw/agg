@@ -265,7 +265,7 @@ jobs:
         run: brew install myci prorab prorab-extra conan make
       - name: set PATH
         uses: myci-actions/export-env-var@master
-        with: {name: PATH, value: /usr/local/bin:$PATH}
+        with: {name: PATH, value: "/usr/local/bin:$PATH"}
       - name: GNU make version
         run: make --version
       - name: set PACKAGE_VERSION

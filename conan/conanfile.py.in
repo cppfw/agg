@@ -31,7 +31,7 @@ class AggConan(ConanFile):
 
 	def build(self):
 		self.run("CONANBUILDINFO_DIR=$(pwd)/ make --directory " + self.name + " autojobs=true")
-		self.run("CONANBUILDINFO_DIR=$(pwd)/ make --directory " + self.name + " autojobs=true test")
+		self.run("CONANBUILDINFO_DIR=$(pwd)/ make --directory " + self.name + " autojobs=true test v=t")
 
 	def package(self):
 		self.copy("*.h", dst="include/agg", src=self.name + "/src/agg/include")

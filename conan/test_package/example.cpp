@@ -1,4 +1,6 @@
-#include <agg/agg_trans_affine.hpp>
+#include <iostream>
+
+#include <agg/agg_trans_affine.h>
 
 int main(int argc, const char** argv){
 	agg::trans_affine a1, a2;

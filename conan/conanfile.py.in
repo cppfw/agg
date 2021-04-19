@@ -45,5 +45,5 @@ class AggConan(ConanFile):
 
 	def package_info(self):
 		with open(self.name + "name.txt", 'r') as file:
-    		data = file.read().replace('\n', '')
+			data = file.read().replace('\n', '')
 			self.cpp_info.libs = [data]

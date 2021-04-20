@@ -1,3 +1,9 @@
+libantigrain (2.8.5) unstable; urgency=medium
+
+  * correct conan link library name
+
+ -- Ivan Gagis <igagis@gmail.com>  Wed, 21 Apr 2021 01:50:02 +0300
+
 libantigrain (2.8.4) unstable; urgency=medium
 
   * deploy to conan

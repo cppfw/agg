@@ -1,3 +1,9 @@
+libantigrain (2.8.6) unstable; urgency=medium
+
+  * initialize local variables to make compiler happy
+
+ -- Ivan Gagis <igagis@gmail.com>  Wed, 21 Apr 2021 02:38:31 +0300
+
 libantigrain (2.8.5) unstable; urgency=medium
 
   * correct conan link library name

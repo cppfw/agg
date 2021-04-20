@@ -44,6 +44,4 @@ class AggConan(ConanFile):
 		self.copy("*.a", dst="lib", src=self.name +     "/src/build", keep_path=False)
 
 	def package_info(self):
-		with open("../../source/" + self.name + "/name.txt", 'r') as file:
-			data = file.read().replace('\n', '')
-			self.cpp_info.libs = [data]
+		self.cpp_info.libs = ["antigrain"]

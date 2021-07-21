@@ -1,3 +1,9 @@
+libantigrain (2.8.7) unstable; urgency=medium
+
+  * deploy to own repo
+
+ -- Ivan Gagis <igagis@gmail.com>  Wed, 21 Jul 2021 14:31:11 +0300
+
 libantigrain (2.8.6) unstable; urgency=medium
 
   * initialize local variables to make compiler happy

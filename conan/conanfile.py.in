@@ -47,3 +47,7 @@ class AggConan(ConanFile):
 
 	def package_info(self):
 		self.cpp_info.libs = ["antigrain"]
+
+	# change package id only when minor or major version changes, i.e. when ABI breaks
+	def package_id(self):
+		self.info.requires.minor_mode()

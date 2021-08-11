@@ -1,3 +1,9 @@
+libantigrain (2.8.8) unstable; urgency=medium
+
+  * use latest make in homebrew formulae
+
+ -- Ivan Gagis <igagis@gmail.com>  Wed, 11 Aug 2021 13:56:47 +0300
+
 libantigrain (2.8.7) unstable; urgency=medium
 
   * deploy to own repo

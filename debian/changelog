@@ -1,3 +1,9 @@
+libantigrain (2.8.9) unstable; urgency=medium
+
+  * build for debian bullseye
+
+ -- Ivan Gagis <igagis@gmail.com>  Mon, 30 Aug 2021 01:03:17 +0300
+
 libantigrain (2.8.8) unstable; urgency=medium
 
   * use latest make in homebrew formulae

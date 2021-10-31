@@ -1,3 +1,9 @@
+libantigrain (2.8.11) unstable; urgency=medium
+
+  * build for ios 9.0
+
+ -- Ivan Gagis <igagis@gmail.com>  Sun, 31 Oct 2021 22:18:30 +0200
+
 libantigrain (2.8.10) unstable; urgency=medium
 
   * ios: static framework

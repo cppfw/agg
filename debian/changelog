@@ -1,3 +1,9 @@
+libantigrain (2.8.12) unstable; urgency=medium
+
+  * build for raspbian bullseye
+
+ -- Ivan Gagis <igagis@gmail.com>  Tue, 09 Nov 2021 01:22:25 +0200
+
 libantigrain (2.8.11) unstable; urgency=medium
 
   * build for ios 9.0

@@ -1,3 +1,9 @@
+libantigrain (2.8.13) unstable; urgency=medium
+
+  * build for conan bullseye
+
+ -- Ivan Gagis <igagis@gmail.com>  Thu, 16 Dec 2021 17:03:58 +0200
+
 libantigrain (2.8.12) unstable; urgency=medium
 
   * build for raspbian bullseye

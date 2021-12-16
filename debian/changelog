@@ -1,3 +1,9 @@
+libantigrain (2.8.14) unstable; urgency=medium
+
+  * build conan package for different macos versions
+
+ -- Ivan Gagis <igagis@gmail.com>  Thu, 16 Dec 2021 18:00:05 +0200
+
 libantigrain (2.8.13) unstable; urgency=medium
 
   * build for conan bullseye

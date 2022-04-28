@@ -251,7 +251,7 @@ jobs:
           repo: deb http://gagis.hopto.org/repo/cppfw/${{ matrix.os }} ${{ matrix.codename }} main
           repo-name: cppfw
           keys-asc: http://gagis.hopto.org/repo/cppfw/pubkey.gpg
-          install: devscripts equivs myci prorab prorab-extra python3-pip cmake git
+          install: devscripts equivs myci prorab prorab-extra python3-pip cmake git clang-tidy
       - name: install conan
         run: |
           pip3 install conan

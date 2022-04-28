@@ -22,6 +22,8 @@ this_cxxflags += -fPIC
 
 this_ldlibs += -lstdc++
 
-this_lint_cmd = $(prorab_lint_cmd_clang_tidy)
+ifeq ($(os),linux)
+    this_lint_cmd = $(prorab_lint_cmd_clang_tidy)
+endif
 
 $(eval $(prorab-build-lib))

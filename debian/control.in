@@ -2,7 +2,11 @@ Source: libantigrain
 Section: libs
 Priority: extra
 Maintainer: Ivan Gagis <igagis@gmail.com>
-Build-Depends: debhelper (>= 9), prorab (>= 1.15.17), prorab-extra,
+Build-Depends:
+		debhelper (>= 9),
+		prorab (>= 1.15.17),
+		prorab-extra,
+		clang-tidy,
 		libc6-dev
 Build-Depends-Indep: doxygen
 Standards-Version: 3.9.2

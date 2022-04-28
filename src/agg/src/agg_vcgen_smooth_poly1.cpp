@@ -127,10 +127,12 @@ namespace agg
                     break;
                 }
 
+				// NOLINTNEXTLINE(clang-analyzer-deadcode.DeadStores): no idea why "error: Value stored to 'cmd' is never read"
                 cmd = path_cmd_move_to;
                 m_status = polygon;
                 m_src_vertex = 0;
 
+				[[fallthrough]];
             case polygon:
                 if(m_closed)
                 {

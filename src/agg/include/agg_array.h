@@ -141,7 +141,7 @@ namespace agg
 
         unsigned size() const { return m_size; }
         const T& operator [] (unsigned i) const { return m_array[i]; }
-              T& operator [] (unsigned i)       { return m_array[i]; }
+              T& operator [] (unsigned i)       { return m_array[i]; } // NOLINT(clang-analyzer-core.uninitialized.UndefReturn)
         const T& at(unsigned i) const           { return m_array[i]; }
               T& at(unsigned i)                 { return m_array[i]; }
         T  value_at(unsigned i) const           { return m_array[i]; }

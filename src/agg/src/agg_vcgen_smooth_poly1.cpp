@@ -132,7 +132,6 @@ namespace agg
                 m_status = polygon;
                 m_src_vertex = 0;
 
-				[[fallthrough]];
             case polygon:
                 if(m_closed)
                 {

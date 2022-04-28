@@ -1,3 +1,9 @@
+libantigrain (2.8.15) unstable; urgency=medium
+
+  * add lint suppressors
+
+ -- Ivan Gagis <igagis@gmail.com>  Thu, 28 Apr 2022 22:47:27 +0300
+
 libantigrain (2.8.14) unstable; urgency=medium
 
   * build conan package for different macos versions

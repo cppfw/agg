@@ -22,8 +22,11 @@ this_cxxflags += -fPIC
 
 this_ldlibs += -lstdc++
 
+# Run lint only on Debian, because Ubuntu's version can be unstable
 ifeq ($(os),linux)
-    this_lint_cmd = $(prorab_lint_cmd_clang_tidy)
+    ifeq ($(shell lsb_release --short --id),Debian)
+        this_lint_cmd = $(prorab_lint_cmd_clang_tidy)
+    endif
 endif
 
 $(eval $(prorab-build-lib))

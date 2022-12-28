@@ -1,3 +1,9 @@
+libantigrain (2.8.17) unstable; urgency=medium
+
+  * msvs: build v143 configs
+
+ -- Ivan Gagis <igagis@gmail.com>  Wed, 28 Dec 2022 21:55:47 +0200
+
 libantigrain (2.8.16) unstable; urgency=medium
 
   * build for ubuntu jammy

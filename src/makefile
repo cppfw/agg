@@ -23,9 +23,6 @@ this_cxxflags += -fPIC
 
 this_ldlibs += -lstdc++
 
-this_cxxflags += -fvisibility=default
-this_ldflags += -fvisibility=default
-
 # Run lint only on Debian, because Ubuntu's version can be unstable
 ifeq ($(os),linux)
     ifeq ($(shell lsb_release --short --id),Debian)

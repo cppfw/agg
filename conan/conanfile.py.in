@@ -32,7 +32,6 @@ class AggConan(ConanFile):
 # conan_basic_setup()''')
 
 	def build(self):
-		self.run("CONANBUILDINFO_DIR=$(pwd)/ echo $CXXFLAGS $LDFLAGS $LDLIBS")
 		self.run("CONANBUILDINFO_DIR=$(pwd)/ make")
 		self.run("CONANBUILDINFO_DIR=$(pwd)/ make test")
 

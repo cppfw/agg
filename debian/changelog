@@ -1,3 +1,9 @@
+libantigrain (2.8.18) unstable; urgency=medium
+
+  * rebuild
+
+ -- Ivan Gagis <igagis@gmail.com>  Fri, 17 Feb 2023 10:27:33 +0200
+
 libantigrain (2.8.17) unstable; urgency=medium
 
   * msvs: build v143 configs

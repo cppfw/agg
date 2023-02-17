@@ -18,6 +18,7 @@ this_headers_install_dir := agg # TODO: make it $(this_name) when library is ren
 this_srcs += $(patsubst $(d)%,%,$(wildcard $(d)agg/src/*.cpp))
 
 this_cxxflags += -I $(d)agg/include
+this_cxxflags += -fstrict-aliasing # in order to comply with the c++ standard more strictly
 this_cxxflags += -fPIC
 
 this_ldlibs += -lstdc++

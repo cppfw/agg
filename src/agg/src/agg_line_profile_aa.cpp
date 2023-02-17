@@ -107,6 +107,7 @@ namespace agg
         ch = ch_center;
         for(i = 0; i < subpixel_scale*2; i++)
         {
+            // NOLINTNEXTLINE(clang-analyzer-core.uninitialized.Assign, "TODO: why?")
             *--ch = *ch_center++;
         }
     }

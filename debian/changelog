@@ -1,3 +1,9 @@
+libantigrain (2.8.19) unstable; urgency=medium
+
+  * set explicitly symbols visibility to default
+
+ -- Ivan Gagis <igagis@gmail.com>  Fri, 17 Feb 2023 13:08:28 +0200
+
 libantigrain (2.8.18) unstable; urgency=medium
 
   * rebuild

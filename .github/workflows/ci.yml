@@ -9,7 +9,7 @@ env:
   MYCI_NEXUS_PASSWORD: ${{ secrets.MYCI_NEXUS_PASSWORD }}
   MYCI_GIT_USERNAME: igagis
   MYCI_GIT_PASSWORD: ${{ secrets.MYCI_GIT_ACCESS_TOKEN }}
-  MYCI_CONAN_REMOTE: http://gagis.hopto.org/conan
+  MYCI_CONAN_REMOTE: https://gagis.hopto.org/conan
   MYCI_CONAN_USER: cppfw
   MYCI_CONAN_PASSWORD: ${{ secrets.MYCI_CONAN_PASSWORD }}
   CONAN_V2_MODE: 1
@@ -39,9 +39,9 @@ jobs:
       - name: add cppfw deb repo
         uses: myci-actions/add-deb-repo@master
         with:
-          repo: deb http://gagis.hopto.org/repo/cppfw/${{ matrix.os }} ${{ matrix.codename }} main
+          repo: deb https://gagis.hopto.org/repo/cppfw/${{ matrix.os }} ${{ matrix.codename }} main
           repo-name: cppfw
-          keys-asc: http://gagis.hopto.org/repo/cppfw/pubkey.gpg
+          keys-asc: https://gagis.hopto.org/repo/cppfw/pubkey.gpg
           install: myci git
       - name: install ci tools
         run: |
@@ -136,9 +136,9 @@ jobs:
     - name: add cppfw deb repo
       uses: myci-actions/add-deb-repo@master
       with:
-        repo: deb http://gagis.hopto.org/repo/cppfw/$(lsb_release --id --short | tr '[:upper:]' '[:lower:]') $(lsb_release --codename --short) main
+        repo: deb https://gagis.hopto.org/repo/cppfw/$(lsb_release --id --short | tr '[:upper:]' '[:lower:]') $(lsb_release --codename --short) main
         repo-name: cppfw
-        keys-asc: http://gagis.hopto.org/repo/cppfw/pubkey.gpg
+        keys-asc: https://gagis.hopto.org/repo/cppfw/pubkey.gpg
         install: myci
     - name: set PACKAGE_VERSION
       uses: myci-actions/export-env-var@master
@@ -150,7 +150,7 @@ jobs:
         myci-apply-version.sh --version $PACKAGE_VERSION *.pom.in
         myci-apply-version.sh --version $PACKAGE_VERSION *.aar.in --filename-only
     - name: deploy
-      run: myci-deploy-maven-nexus.sh --base-url http://gagis.hopto.org/nexus --repo android android/$PACKAGE_NAME-$PACKAGE_VERSION.aar
+      run: myci-deploy-maven-nexus.sh --base-url https://gagis.hopto.org/nexus --repo android android/$PACKAGE_NAME-$PACKAGE_VERSION.aar
       if: startsWith(github.ref, 'refs/tags/')
 ##### msys2 #####
   msys2:
@@ -178,17 +178,17 @@ jobs:
       uses: myci-actions/add-pacman-repo@master
       with:
         name: cppfw_msys
-        url: http://gagis.hopto.org/repo/cppfw/msys2/msys
+        url: https://gagis.hopto.org/repo/cppfw/msys2/msys
         shell: 'msys2 {0}'
-        key-server: http://gagis.hopto.org/repo/cppfw/pubkey.gpg
+        key-server: https://gagis.hopto.org/repo/cppfw/pubkey.gpg
         install: myci
     - name: add cppfw pacman msys/mingw repo
       uses: myci-actions/add-pacman-repo@master
       with:
         name: cppfw_${{ matrix.repo }}
-        url: http://gagis.hopto.org/repo/cppfw/msys2/${{ matrix.repo }}
+        url: https://gagis.hopto.org/repo/cppfw/msys2/${{ matrix.repo }}
         shell: 'msys2 {0}'
-        key-server: http://gagis.hopto.org/repo/cppfw/pubkey.gpg
+        key-server: https://gagis.hopto.org/repo/cppfw/pubkey.gpg
     - name: git clone
       uses: myci-actions/checkout@master
     - name: prepare pacman package
@@ -249,9 +249,9 @@ jobs:
       - name: add cppfw deb repo
         uses: myci-actions/add-deb-repo@master
         with:
-          repo: deb http://gagis.hopto.org/repo/cppfw/${{ matrix.os }} ${{ matrix.codename }} main
+          repo: deb https://gagis.hopto.org/repo/cppfw/${{ matrix.os }} ${{ matrix.codename }} main
           repo-name: cppfw
-          keys-asc: http://gagis.hopto.org/repo/cppfw/pubkey.gpg
+          keys-asc: https://gagis.hopto.org/repo/cppfw/pubkey.gpg
           install: devscripts equivs myci prorab prorab-extra python3-pip cmake git clang-tidy
       - name: install conan
         run: |

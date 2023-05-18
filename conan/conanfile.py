@@ -51,9 +51,9 @@ class AggConan(ConanFile):
 		self.run("make lint=off test")
 
 	def package(self):
-		src_dir = os.path.join(self.build_folder, "src")
+		src_dir = os.path.join(self.build_folder, "src/agg/include")
 		src_rel_dir = os.path.join(self.build_folder, "src/build")
-		dst_include_dir = os.path.join(self.package_folder, "include")
+		dst_include_dir = os.path.join(self.package_folder, "include/agg")
 		dst_lib_dir = os.path.join(self.package_folder, "lib")
 		dst_bin_dir = os.path.join(self.package_folder, "bin")
 		

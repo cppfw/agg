@@ -12,9 +12,6 @@ env:
   MYCI_CONAN_REMOTE: https://gagis.hopto.org/conan
   MYCI_CONAN_USER: cppfw
   MYCI_CONAN_PASSWORD: ${{ secrets.MYCI_CONAN_PASSWORD }}
-  CONAN_V2_MODE: 1
-  CONAN_REVISIONS_ENABLED: 1
-  CONAN_SCM_TO_CONANDATA: 1
 jobs:
 ##### linux #####
   linux:
@@ -254,26 +251,25 @@ jobs:
           keys-asc: https://gagis.hopto.org/repo/cppfw/pubkey.gpg
           install: devscripts equivs myci prorab prorab-extra python3-pip cmake git clang-tidy
       - name: install conan
+        run: pip3 --quiet install conan
+      - name: create default conan profile
         run: |
-          pip3 install conan
-          conan profile new --detect default
-          conan profile update settings.compiler.libcxx=libstdc++11 default
+          conan profile detect --name default
+          sed -i -E "s/compiler.cppstd=.*$/compiler.cppstd=17/g" ~/.conan2/profiles/default
       - name: git clone
         uses: myci-actions/checkout@master
       - name: set PACKAGE_VERSION
         uses: myci-actions/export-env-var@master
         with: {name: PACKAGE_VERSION, value: $(myci-deb-version.sh debian/changelog)}
         if: startsWith(github.ref, 'refs/tags/')
-      - name: prepare conanfile
-        run: myci-apply-version.sh --version $PACKAGE_VERSION conan/conanfile.py.in
       - name: build
         run: |
           conan remote add cppfw $MYCI_CONAN_REMOTE
-          conan create conan $MYCI_CONAN_USER/main --ignore-dirty
+          conan create conan --user $MYCI_CONAN_USER --channel main --version $PACKAGE_VERSION
       - name: deploy conan package
         run: |
-          conan user --remote cppfw --password $MYCI_CONAN_PASSWORD $MYCI_CONAN_USER
-          conan upload --remote cppfw --all $PACKAGE_NAME/$PACKAGE_VERSION@$MYCI_CONAN_USER/main
+          conan remote login --password $MYCI_CONAN_PASSWORD cppfw $MYCI_CONAN_USER
+          conan upload --check --remote cppfw $PACKAGE_NAME/$PACKAGE_VERSION@$MYCI_CONAN_USER/main
         if: startsWith(github.ref, 'refs/tags/')
 ##### conan - macosx #####
   conan-macosx:
@@ -295,6 +291,10 @@ jobs:
           brew update
       - name: install ci tools
         run: brew install myci prorab prorab-extra conan make
+      - name: create default conan profile
+        run: |
+          conan profile detect --name default
+          sed -i -E "s/compiler.cppstd=.*$/compiler.cppstd=17/g" ~/.conan2/profiles/default
       - name: set PATH
         uses: myci-actions/export-env-var@master
         with: {name: PATH, value: "/usr/local/opt/make/libexec/gnubin:$PATH"}
@@ -304,14 +304,12 @@ jobs:
         uses: myci-actions/export-env-var@master
         with: {name: PACKAGE_VERSION, value: $(myci-deb-version.sh debian/changelog)}
         if: startsWith(github.ref, 'refs/tags/')
-      - name: prepare conanfile
-        run: myci-apply-version.sh --version $PACKAGE_VERSION conan/conanfile.py.in
       - name: build
         run: |
           conan remote add cppfw $MYCI_CONAN_REMOTE
-          conan create conan $MYCI_CONAN_USER/main --ignore-dirty
+          conan create conan --user $MYCI_CONAN_USER --channel main --version $PACKAGE_VERSION
       - name: deploy conan package
         run: |
-          conan user --remote cppfw --password $MYCI_CONAN_PASSWORD $MYCI_CONAN_USER
-          conan upload --remote cppfw --all $PACKAGE_NAME/$PACKAGE_VERSION@$MYCI_CONAN_USER/main
+          conan remote login --password $MYCI_CONAN_PASSWORD cppfw $MYCI_CONAN_USER
+          conan upload --check --remote cppfw $PACKAGE_NAME/$PACKAGE_VERSION@$MYCI_CONAN_USER/main
         if: startsWith(github.ref, 'refs/tags/')

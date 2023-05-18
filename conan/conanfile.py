@@ -52,7 +52,7 @@ class AggConan(ConanFile):
 
 	def package(self):
 		src_dir = os.path.join(self.build_folder, "src")
-		src_rel_dir = os.path.join(self.build_folder, "src/out/rel")
+		src_rel_dir = os.path.join(self.build_folder, "src/build")
 		dst_include_dir = os.path.join(self.package_folder, "include")
 		dst_lib_dir = os.path.join(self.package_folder, "lib")
 		dst_bin_dir = os.path.join(self.package_folder, "bin")

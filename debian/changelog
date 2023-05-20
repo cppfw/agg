@@ -1,3 +1,9 @@
+libantigrain (2.8.21) unstable; urgency=medium
+
+  * conan: build on ubuntu jammy
+
+ -- Ivan Gagis <igagis@gmail.com>  Sat, 20 May 2023 16:04:12 +0300
+
 libantigrain (2.8.20) unstable; urgency=medium
 
   * conan: migrate to conan v2

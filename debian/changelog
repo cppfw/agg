@@ -1,3 +1,9 @@
+libantigrain (2.8.25) unstable; urgency=medium
+
+  * update homebrew packaging
+
+ -- Ivan Gagis <igagis@gmail.com>  Mon, 29 Apr 2024 23:40:59 +0300
+
 libantigrain (2.8.24) unstable; urgency=medium
 
   * bookworm

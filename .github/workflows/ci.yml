@@ -74,7 +74,7 @@ jobs:
       matrix:
         include:
           - {image: "archlinux:latest", arch: amd64}
-          - {image: "lopsided/archlinux-arm32v7:latest", arch: arm32, labels: [arm32,docker]}
+          # - {image: "lopsided/archlinux-arm32v7:latest", arch: arm32, labels: [arm32,docker]}
           - {image: "lopsided/archlinux-arm64v8:latest", arch: arm64, labels: [arm64,docker]}
     runs-on: ${{ (matrix.labels == '' && 'ubuntu-latest') || matrix.labels }}
     container: ${{ matrix.image }}

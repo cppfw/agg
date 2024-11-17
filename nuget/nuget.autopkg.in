@@ -18,9 +18,9 @@ nuget{
 		title: Anti-grain geometry;
 		authors: {Maxim Shemanarev};
 		owners: {Ivan Gagis};
-		licenseUrl: "https://raw.githubusercontent.com/cppfw/agg/master/LICENSE";
+		licenseUrl: "https://raw.githubusercontent.com/cppfw/agg/main/LICENSE";
 		projectUrl: "https://github.com/cppfw/agg";
-		iconUrl: "https://github.com/cppfw/agg/blob/master/logo.svg";
+		iconUrl: "https://github.com/cppfw/agg/blob/main/logo.svg";
 		requireLicenseAcceptance:false;
 		summary: C++ SVG rendering library;
 
@@ -72,7 +72,7 @@ nuget{
 		}
 */
 		//==== v142 tools ====
-
+/*
 		[x86,v142,release,MultiThreaded] {
 			lib: ..\msvs_solution\v142_Release_MT\libagg.lib;
 		}
@@ -97,7 +97,7 @@ nuget{
 		[x64,v142,debug,MultiThreadedDebugDLL] {
 			lib: ..\msvs_solution\x64\v142_Debug_MD\libagg.lib;
 		}
-
+*/
 		//==== v143 tools ====
 
 		[x86,v143,release,MultiThreaded] {

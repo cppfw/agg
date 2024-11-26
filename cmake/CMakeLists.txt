@@ -43,7 +43,7 @@ install(
     DESTINATION
         "${CMAKE_INSTALL_INCLUDEDIR}"
     FILES_MATCHING PATTERN
-        "*.hpp"
+        "*.h"
 )
 
 install(

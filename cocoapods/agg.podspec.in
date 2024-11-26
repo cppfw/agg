@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   
   s.source = { :http => "http://gagis.hopto.org/repo/cppfw/cocoapods/#{s.name}-#{s.version}.zip" }
 
-  s.source_files  = "src/agg/include/**/*.{hpp,h}"
+  s.source_files  = "include/**/*.{hpp,h}"
   s.header_mappings_dir = "include"
 
   s.ios.vendored_framework = "lib/ios/#{s.name}.xcframework"

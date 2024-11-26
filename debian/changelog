@@ -1,3 +1,9 @@
+libantigrain (2.8.28) unstable; urgency=medium
+
+  * vcpkgize
+
+ -- Ivan Gagis <igagis@gmail.com>  Tue, 26 Nov 2024 13:52:55 +0200
+
 libantigrain (2.8.27) unstable; urgency=medium
 
   * conan: rebuild

@@ -3,7 +3,7 @@ set(name agg)
 file(GLOB srcs "../../src/agg/src/*.cpp")
 include (${ANDROID_GRADLE_NATIVE_BUNDLE_PLUGIN_MK})
 
-include_directories(../../src/agg/include)
+include_directories(../../src/agg/include/agg)
 
 add_library(
         ${name}

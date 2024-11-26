@@ -22,9 +22,7 @@ android {
     }
 
     nativeBundleExport {
-        // TODO: change headerDir to ../../code/include and add dest subdir 'agg' when this functionality is added to native android plugin.
-        //       Delete the ../../inlcude directory from the repo.
-        headerDir = "${project.projectDir}/../../include/"
+        headerDir = "${project.projectDir}/../../src/agg/include/"
         bundleStatic = true
         includeHeaderFilter.add("**/*.h")
         excludeHeaderFilter.add("agg/ctrl/**/*.h")

@@ -1,3 +1,9 @@
+libantigrain (2.8.31) unstable; urgency=medium
+
+  * ios: fix headers installation 2
+
+ -- Ivan Gagis <igagis@gmail.com>  Tue, 26 Nov 2024 20:54:53 +0200
+
 libantigrain (2.8.30) unstable; urgency=medium
 
   * nuget: fix headers installation

@@ -25,6 +25,8 @@ target_include_directories(
     INTERFACE
         $<BUILD_INTERFACE:>
         $<INSTALL_INTERFACE:include>
+    PRIVATE
+        "${CMAKE_CURRENT_SOURCE_DIR}/../src/${name}/include/"
 )
 
 # target_link_libraries(

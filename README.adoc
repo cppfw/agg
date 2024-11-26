@@ -20,6 +20,7 @@ The directory `src/agg` contains the forked project files.
 . Setup your OS-preferred package system repo following link:https://github.com/cppfw/wiki/blob/main/enable_repo/enable_repo.adoc[this manual]
 . Install package
 +
+- **vcpkg** (multi-OS): **{package_name}**
 - **conan** (multi-OS): **{package_name}**
 - **deb** (Linux): **libantigrain-dev**
 - **homebrew** (MacOS X): **libantigrain**

@@ -8,7 +8,8 @@ project(${name})
 
 # find_package(utki CONFIG REQUIRED)
 
-file(GLOB_RECURSE srcs "../src/${name}/src/*.cpp")
+# non-recursive
+file(GLOB srcs "../src/${name}/src/*.cpp")
 
 add_library(
     ${name}

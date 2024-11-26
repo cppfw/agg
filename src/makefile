@@ -6,7 +6,7 @@ this_name := $(shell cat $(d)../name.txt)
 
 this_soname := $(shell cat $(d)../soname.txt)
 
-this_headers_dir := agg/include
+this_headers_dir := agg/include/agg
 
 this_install_cxx_hdrs := $(patsubst $(d)%,%,$(wildcard $(d)$(this_headers_dir)/*.h))
 
@@ -17,7 +17,7 @@ this_headers_install_dir := agg # TODO: make it $(this_name) when library is ren
 
 this_srcs += $(patsubst $(d)%,%,$(wildcard $(d)agg/src/*.cpp))
 
-this_cxxflags += -I $(d)agg/include
+this_cxxflags += -I $(d)agg/include/agg
 this_cxxflags += -fstrict-aliasing # in order to comply with the c++ standard more strictly
 this_cxxflags += -fPIC
 

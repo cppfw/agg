@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <cassert>
 
-#include "../../src/agg/include/agg_path_storage.h"
-#include "../../src/agg/include/agg_conv_stroke.h"
+#include "../../src/agg/include/agg/agg_path_storage.h"
+#include "../../src/agg/include/agg/agg_conv_stroke.h"
 
 int main(int argc, const char** argv){
 

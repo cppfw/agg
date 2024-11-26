@@ -27,7 +27,7 @@ target_include_directories(
         $<BUILD_INTERFACE:>
         $<INSTALL_INTERFACE:include>
     PRIVATE
-        "${CMAKE_CURRENT_SOURCE_DIR}/../src/${name}/include/"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../src/${name}/include/${name}"
 )
 
 # target_link_libraries(
@@ -39,7 +39,7 @@ target_include_directories(
 # install library header files preserving directory hierarchy
 install(
     DIRECTORY
-        "${CMAKE_CURRENT_SOURCE_DIR}/../include/${name}"
+        "${CMAKE_CURRENT_SOURCE_DIR}/../src/${name}/include/${name}"
     DESTINATION
         "${CMAKE_INSTALL_INCLUDEDIR}"
     FILES_MATCHING PATTERN

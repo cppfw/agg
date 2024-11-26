@@ -1,6 +1,6 @@
-#include <agg/agg_trans_affine.hpp>
+#include <agg/agg_trans_affine.h>
 
-using namespace std::string_view_literals;
+#include <iostream>
 
 int main(int argc, const char** argv){
     agg::trans_affine t(10, 20, 30, 40, 50, 60);

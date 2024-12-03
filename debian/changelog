@@ -1,3 +1,9 @@
+libantigrain (2.8.32) unstable; urgency=medium
+
+  * conan: macos
+
+ -- Ivan Gagis <igagis@gmail.com>  Tue, 03 Dec 2024 14:27:35 +0200
+
 libantigrain (2.8.31) unstable; urgency=medium
 
   * ios: fix headers installation 2

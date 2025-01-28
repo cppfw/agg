@@ -45,8 +45,11 @@ class AggConan(ConanFile):
 		git.run("submodule update --init --remote --depth 1")
 
 	def build(self):
-		self.run("make $MAKE_INCLUDE_DIRS_ARG lint=off")
-		self.run("make $MAKE_INCLUDE_DIRS_ARG lint=off test")
+		if self.settings.os == "Emscripten":
+			self.run("make $MAKE_INCLUDE_DIRS_ARG lint=off --directory=src")
+		else:
+			self.run("make $MAKE_INCLUDE_DIRS_ARG lint=off")
+			self.run("make $MAKE_INCLUDE_DIRS_ARG lint=off test")
 
 	def package(self):
 		src_dir = os.path.join(self.build_folder, "src/agg/include/agg")

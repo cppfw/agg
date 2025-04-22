@@ -21,21 +21,21 @@ jobs:
         include:
           # - {os: debian, codename: buster, image_owner: }
           # - {os: debian, codename: buster, image_owner: i386/, labels: [i386,docker]}
-          # - {os: debian, codename: buster, image_owner: arm32v7/, labels: [arm32,docker]}
+          # - {os: debian, codename: buster, image_owner: arm32v7/, labels: [ubuntu-24.04-arm]}
           # - {os: debian, codename: bullseye, image_owner: }
           # - {os: debian, codename: bullseye, image_owner: i386/, labels: [i386,docker]}
-          # - {os: debian, codename: bullseye, image_owner: arm32v7/, labels: [arm32,docker]}
-          # - {os: debian, codename: bullseye, image_owner: arm64v8/, labels: [arm64,docker]}
+          # - {os: debian, codename: bullseye, image_owner: arm32v7/, labels: [ubuntu-24.04-arm]}
+          # - {os: debian, codename: bullseye, image_owner: arm64v8/, labels: [ubuntu-24.04-arm]}
           - {os: debian, codename: bookworm, image_owner: }
           # - {os: debian, codename: bookworm, image_owner: i386/, labels: [i386,docker]}
-          - {os: debian, codename: bookworm, image_owner: arm32v7/, labels: [arm32,docker]}
-          - {os: debian, codename: bookworm, image_owner: arm64v8/, labels: [arm64,docker]}
+          - {os: debian, codename: bookworm, image_owner: arm32v7/, labels: [ubuntu-24.04-arm]}
+          - {os: debian, codename: bookworm, image_owner: arm64v8/, labels: [ubuntu-24.04-arm]}
           # - {os: ubuntu, codename: focal, image_owner: }
           # - {os: ubuntu, codename: jammy, image_owner: }
           - {os: ubuntu, codename: noble, image_owner: }
-          # - {os: raspbian, codename: buster, image_owner: igagis/, labels: [arm32,docker]}
-          # - {os: raspbian, codename: bullseye, image_owner: igagis/, labels: [arm32,docker]}
-          - {os: raspbian, codename: bookworm, image_owner: igagis/, labels: [arm32,docker]}
+          # - {os: raspbian, codename: buster, image_owner: igagis/, labels: [ubuntu-24.04-arm]}
+          # - {os: raspbian, codename: bullseye, image_owner: igagis/, labels: [ubuntu-24.04-arm]}
+          - {os: raspbian, codename: bookworm, image_owner: igagis/, labels: [ubuntu-24.04-arm]}
     runs-on: ${{ (matrix.labels == '' && 'ubuntu-latest') || matrix.labels }}
     container: ${{ matrix.image_owner }}${{ matrix.os }}:${{ matrix.codename }}
     name: linux - ${{ matrix.image_owner }}${{ matrix.os }}:${{ matrix.codename }}
@@ -74,8 +74,8 @@ jobs:
   #     matrix:
   #       include:
   #         - {image: "archlinux:latest", arch: amd64}
-  #         # - {image: "lopsided/archlinux-arm32v7:latest", arch: arm32, labels: [arm32,docker]}
-  #         - {image: "lopsided/archlinux-arm64v8:latest", arch: arm64, labels: [arm64,docker]}
+  #         # - {image: "lopsided/archlinux-arm32v7:latest", arch: arm32, labels: [ubuntu-24.04-arm]}
+  #         - {image: "lopsided/archlinux-arm64v8:latest", arch: arm64, labels: [ubuntu-24.04-arm]}
   #   runs-on: ${{ (matrix.labels == '' && 'ubuntu-latest') || matrix.labels }}
   #   container: ${{ matrix.image }}
   #   name: linux - archlinux - ${{ matrix.arch }}
@@ -312,11 +312,11 @@ jobs:
         include:
           - {os: debian, codename: bookworm, image_owner: }
           # - {os: debian, codename: bookworm, image_owner: i386/, labels: [i386,docker]}
-          # - {os: debian, codename: bookworm, image_owner: , labels: [arm32,docker]}
-          # - {os: debian, codename: bookworm, image_owner: , labels: [arm64,docker]}
+          # - {os: debian, codename: bookworm, image_owner: arm32v7/, labels: [ubuntu-24.04-arm]}
+          # - {os: debian, codename: bookworm, image_owner: arm64v8/, labels: [ubuntu-24.04-arm]}
     runs-on: ${{ (matrix.labels == '' && 'ubuntu-latest') || matrix.labels }}
     container: ${{ matrix.image_owner }}${{ matrix.os }}:${{ matrix.codename }}
-    name: vcpkg - linux | ${{ matrix.labels[0] }}
+    name: vcpkg - linux | ${{ matrix.image_owner }}
     steps:
       - name: add cppfw deb repo
         uses: myci-actions/add-deb-repo@main
@@ -364,11 +364,11 @@ jobs:
         include:
           - {os: debian, codename: bookworm, image_owner: }
           # - {os: debian, codename: bookworm, image_owner: i386/, labels: [i386,docker]}
-          - {os: debian, codename: bookworm, image_owner: , labels: [arm32,docker]}
-          - {os: debian, codename: bookworm, image_owner: , labels: [arm64,docker]}
+          - {os: debian, codename: bookworm, image_owner: arm32v7/, labels: [ubuntu-24.04-arm]}
+          - {os: debian, codename: bookworm, image_owner: arm64v8/, labels: [ubuntu-24.04-arm]}
     runs-on: ${{ (matrix.labels == '' && 'ubuntu-latest') || matrix.labels }}
     container: ${{ matrix.image_owner }}${{ matrix.os }}:${{ matrix.codename }}
-    name: conan - linux | ${{ matrix.labels[0] }}
+    name: conan - linux | ${{ matrix.image_owner }}
     steps:
       - name: clean
         uses: myci-actions/clean@main
@@ -460,12 +460,9 @@ jobs:
         include:
           # - {os: ubuntu, codename: noble, image_owner: }
           - {os: debian, codename: bookworm, image_owner: }
-          # - {os: debian, codename: bookworm, image_owner: i386/, labels: [i386,docker]}
-          # - {os: debian, codename: bookworm, image_owner: , labels: [arm32,docker]}
-          # - {os: debian, codename: bookworm, image_owner: , labels: [arm64,docker]}
     runs-on: ${{ (matrix.labels == '' && 'ubuntu-latest') || matrix.labels }}
     container: ${{ matrix.image_owner }}${{ matrix.os }}:${{ matrix.codename }}
-    name: conan - emscripten | ${{ matrix.labels[0] }}
+    name: conan - emscripten
     steps:
       - name: add cppfw deb repo
         uses: myci-actions/add-deb-repo@main

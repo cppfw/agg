@@ -209,9 +209,9 @@ namespace agg
 
         //---------------------------------------------------------------------
         gradient_radial_focus(double r, double fx, double fy) : 
-            m_r (iround(r  * gradient_subpixel_scale)), 
-            m_fx(iround(fx * gradient_subpixel_scale)), 
-            m_fy(iround(fy * gradient_subpixel_scale))
+            m_r (iround(r  * int(gradient_subpixel_scale))), 
+            m_fx(iround(fx * int(gradient_subpixel_scale))), 
+            m_fy(iround(fy * int(gradient_subpixel_scale)))
         {
             update_values();
         }
@@ -219,16 +219,16 @@ namespace agg
         //---------------------------------------------------------------------
         void init(double r, double fx, double fy)
         {
-            m_r  = iround(r  * gradient_subpixel_scale);
-            m_fx = iround(fx * gradient_subpixel_scale);
-            m_fy = iround(fy * gradient_subpixel_scale);
+            m_r  = iround(r  * int(gradient_subpixel_scale));
+            m_fx = iround(fx * int(gradient_subpixel_scale));
+            m_fy = iround(fy * int(gradient_subpixel_scale));
             update_values();
         }
 
         //---------------------------------------------------------------------
-        double radius()  const { return double(m_r)  / gradient_subpixel_scale; }
-        double focus_x() const { return double(m_fx) / gradient_subpixel_scale; }
-        double focus_y() const { return double(m_fy) / gradient_subpixel_scale; }
+        double radius()  const { return double(m_r)  / int(gradient_subpixel_scale); }
+        double focus_x() const { return double(m_fx) / int(gradient_subpixel_scale); }
+        double focus_y() const { return double(m_fy) / int(gradient_subpixel_scale); }
 
         //---------------------------------------------------------------------
         int calculate(int x, int y, int) const

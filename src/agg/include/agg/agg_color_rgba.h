@@ -749,7 +749,7 @@ namespace agg
         //--------------------------------------------------------------------
         static AGG_INLINE value_type from_double(double a)
         {
-            return value_type(uround(a * base_mask));
+            return value_type(uround(a * int(base_mask)));
         }
 
         //--------------------------------------------------------------------
@@ -944,7 +944,7 @@ namespace agg
         AGG_INLINE self_type gradient(const self_type& c, double k) const
         {
             self_type ret;
-            calc_type ik = uround(k * base_mask);
+            calc_type ik = uround(k * int(base_mask));
             ret.r = lerp(r, c.r, ik);
             ret.g = lerp(g, c.g, ik);
             ret.b = lerp(b, c.b, ik);
@@ -1183,7 +1183,7 @@ namespace agg
         //--------------------------------------------------------------------
         static AGG_INLINE value_type mult_cover(value_type a, cover_type b) 
         {
-            return value_type(a * b / cover_mask);
+            return value_type(a * b / int(cover_mask));
         }
 
         //--------------------------------------------------------------------

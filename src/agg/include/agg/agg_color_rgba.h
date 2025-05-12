@@ -743,7 +743,7 @@ namespace agg
         //--------------------------------------------------------------------
         static AGG_INLINE double to_double(value_type a)
         {
-            return double(a) / base_mask;
+            return double(a) / int(base_mask);
         }
 
         //--------------------------------------------------------------------

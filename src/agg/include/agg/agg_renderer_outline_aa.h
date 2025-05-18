@@ -1306,7 +1306,7 @@ namespace agg
             for(i = 0; i < aa_scale; i++)
             {
                 m_gamma[i] = value_type(
-                    uround(gamma_function(double(i) / aa_mask) * aa_mask));
+                    uround(gamma_function(double(i) / int(aa_mask)) * int(aa_mask)));
             }
         }
 

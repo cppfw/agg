@@ -281,10 +281,10 @@ namespace agg
 
         static void convert(rgba8T<linear>& dst, const rgba& src)
         {
-            dst.r = value_type(uround(src.r * base_mask));
-            dst.g = value_type(uround(src.g * base_mask));
-            dst.b = value_type(uround(src.b * base_mask));
-            dst.a = value_type(uround(src.a * base_mask));
+            dst.r = value_type(uround(src.r * int(base_mask)));
+            dst.g = value_type(uround(src.g * int(base_mask)));
+            dst.b = value_type(uround(src.b * int(base_mask)));
+            dst.a = value_type(uround(src.a * int(base_mask)));
         }
 
         static void convert(rgba8T<sRGB>& dst, const rgba& src)

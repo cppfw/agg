@@ -49,7 +49,7 @@ namespace agg
         enum downscale_shift_e
         {
             downscale_shift = interpolator_type::subpixel_shift - 
-                              gradient_subpixel_shift
+                              int(gradient_subpixel_shift)
         };
 
         //--------------------------------------------------------------------

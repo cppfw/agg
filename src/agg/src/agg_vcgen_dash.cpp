@@ -257,7 +257,7 @@ namespace agg
                     }else if(m_status == stop){ // if looped
                         // this is the case when the whole closed path is covered by a single continuous dash,
                         // so we need to close the dash-path
-                        cmd = path_cmd_end_poly | path_flags_close;
+                        cmd = unsigned(path_cmd_end_poly) | unsigned(path_flags_close);
                     }
                     return cmd;
                 }

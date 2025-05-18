@@ -60,7 +60,7 @@ namespace agg
                 double x = double(i) / double(image_subpixel_scale);
                 double y = filter.calc_weight(x);
                 m_weight_array[pivot + i] = 
-                m_weight_array[pivot - i] = (int16)iround(y * image_filter_scale);
+                m_weight_array[pivot - i] = (int16)iround(y * int(image_filter_scale));
             }
             unsigned end = (diameter() << image_subpixel_shift) - 1;
             m_weight_array[0] = m_weight_array[end];

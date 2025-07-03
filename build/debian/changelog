@@ -1,3 +1,9 @@
+libantigrain (2.8.37) unstable; urgency=medium
+
+  * update
+
+ -- Ivan Gagis <igagis@gmail.com>  Thu, 03 Jul 2025 13:59:43 +0300
+
 libantigrain (2.8.36) unstable; urgency=medium
 
   * fix compiler warnings

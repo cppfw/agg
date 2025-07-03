@@ -22,7 +22,7 @@ android {
     }
 
     nativeBundleExport {
-        headerDir = "${project.projectDir}/../../src/agg/include/"
+        headerDir = "${project.projectDir}/../../../src/agg/include/"
         bundleStatic = true
         includeHeaderFilter.add("**/*.h")
         excludeHeaderFilter.add("agg/ctrl/**/*.h")

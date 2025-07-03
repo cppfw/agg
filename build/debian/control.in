@@ -14,27 +14,25 @@ Standards-Version: 3.9.2
 Package: libantigrain$(soname)
 Section: libs
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends:
+	${shlibs:Depends},
+	${misc:Depends}
 Description: 2d vector graphics C++ library.
- Anti-grain geometry is a vector graphics library which allow drawing to a memory buffer.
-
-Package: libantigrain$(soname)-dbg
-Section: debug
-Architecture: any
-Depends: libantigrain$(soname) (= ${binary:Version}), ${misc:Depends}
-Description: debugging symbols for libantigrain$(soname) package.
+	Anti-grain geometry is a vector graphics library which allow drawing to a memory buffer.
 
 Package: libantigrain-dev
 Section: libdevel
 Architecture: any
-Depends: libantigrain$(soname) (= ${binary:Version}), libantigrain$(soname)-dbg (= ${binary:Version}), ${misc:Depends}
+Depends:
+	libantigrain$(soname) (= ${binary:Version}), 
+	${misc:Depends}
 Suggests: libantigrain-doc
 Description: development files for libantigrain$(soname) library.
- Development files for anti-grain geometry library.
+	Development files for anti-grain geometry library.
 
 Package: libantigrain-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}
 Description: documentation for libantigrain library.
- For more details see description to libantigrain-dev package.
+	For more details see description to libantigrain-dev package.

@@ -1,3 +1,9 @@
+libantigrain (2.8.38) unstable; urgency=medium
+
+  * debian trixie build
+
+ -- Ivan Gagis <igagis@gmail.com>  Sun, 10 Aug 2025 04:16:43 +0300
+
 libantigrain (2.8.37) unstable; urgency=medium
 
   * update

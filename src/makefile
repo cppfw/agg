@@ -21,6 +21,11 @@ this_cxxflags += -I $(d)agg/include/agg
 this_cxxflags += -fstrict-aliasing # in order to comply with the c++ standard more strictly
 this_cxxflags += -fPIC
 
+# On CI build fails with:
+#   error: argument unused during compilation: '-fstack-clash-protection' [clang-diagnostic-unused-command-line-argument,-warnings-as-errors]
+# Disable the warning.
+this_cxxflags += -Wno-unused-command-line-argument
+
 this_ldlibs += -lstdc++
 
 # Run lint only on Debian, because Ubuntu's version can be unstable

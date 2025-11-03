@@ -1,3 +1,9 @@
+libantigrain (2.8.39) unstable; urgency=medium
+
+  * debian: fix dbgsrc path
+
+ -- Ivan Gagis <igagis@gmail.com>  Mon, 03 Nov 2025 14:50:43 +0200
+
 libantigrain (2.8.38) unstable; urgency=medium
 
   * debian trixie build

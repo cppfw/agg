@@ -24,10 +24,8 @@ The directory `src/agg` contains the forked project files.
 - **conan** (multi-OS): **{package_name}**
 - **deb** (Linux): **libantigrain-dev**
 - **homebrew** (MacOS X): **libantigrain**
-- **Android**: **io.github.cppfw:{package_name}**
-- **cocoapods** (iOS): **{package_name}**
-- **Msys2** (Windows): **mingw-w64-i686-{package_name}**, **mingw-w64-x86_64-{package_name}**
-- **Nuget** (DEPRECATED!!! use `vcpkg`) (Windows, Visual Studio): **lib{package_name}**
+- **android**: **io.github.cppfw:{package_name}**
+- **msys2** (Windows): **mingw-w64-i686-{package_name}**, **mingw-w64-x86_64-{package_name}**
 
 == License notice from the original project
 

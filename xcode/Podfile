@@ -1,8 +1,0 @@
-source 'https://github.com/cppfw/cocoapods-repo.git'
-
-project 'agg/agg.xcodeproj'
-
-platform :ios, '9.0'
-
-target "agg" do
-end

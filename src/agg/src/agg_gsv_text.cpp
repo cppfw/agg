@@ -547,10 +547,8 @@ namespace agg
         FILE* fd = std::fopen(file, "rb");
         if(fd)
         {
-            unsigned len;
-
             std::fseek(fd, 0l, SEEK_END);
-            len = std::ftell(fd);
+            size_t len = std::ftell(fd);
             std::fseek(fd, 0l, SEEK_SET);
             if(len > 0)
             {

@@ -1,3 +1,9 @@
+libantigrain (2.8.41) unstable; urgency=medium
+
+  * fix compiler warning
+
+ -- Ivan Gagis <igagis@gmail.com>  Thu, 16 Apr 2026 23:40:16 +0300
+
 libantigrain (2.8.40) unstable; urgency=medium
 
   * fix compiler warning

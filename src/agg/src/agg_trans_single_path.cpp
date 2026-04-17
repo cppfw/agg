@@ -66,17 +66,13 @@ namespace agg
     {
         if(m_status == making_path && m_src_vertices.size() > 1)
         {
-            unsigned i;
-            double dist;
-            double d;
-
             m_src_vertices.close(false);
             if(m_src_vertices.size() > 2)
             {
                 if(m_src_vertices[m_src_vertices.size() - 2].dist * 10.0 < 
                    m_src_vertices[m_src_vertices.size() - 3].dist)
                 {
-                    d = m_src_vertices[m_src_vertices.size() - 3].dist + 
+                    double d = m_src_vertices[m_src_vertices.size() - 3].dist + 
                         m_src_vertices[m_src_vertices.size() - 2].dist;
 
                     m_src_vertices[m_src_vertices.size() - 2] = 
@@ -87,8 +83,8 @@ namespace agg
                 }
             }
 
-            dist = 0.0;
-            for(i = 0; i < m_src_vertices.size(); i++)
+            double dist = 0.0;
+            for(unsigned i = 0; i < m_src_vertices.size(); i++)
             {
                 vertex_dist& v = m_src_vertices[i];
                 double d = v.dist;

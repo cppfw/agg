@@ -234,7 +234,7 @@ namespace agg
 
             case skip_first_dash:
                 {
-                    unsigned cmd = this->next_dash_vertex(x, y);
+                    unsigned command = this->next_dash_vertex(x, y);
                     if(this->m_status == stop){ // if looped
                         if(this->first_dash_skept){
                             // the first dash has been skept in the beginning, so still need to return it in the end
@@ -242,28 +242,28 @@ namespace agg
                             this->init_state_vars();
                         }
 
-                    }else if(cmd == path_cmd_line_to){
-                        cmd = path_cmd_move_to;
+                    }else if(command == path_cmd_line_to){
+                        command = path_cmd_move_to;
                     }else if(this->m_status == skip_first_dash){ // if status did not change
                         this->m_status = dashes;
                     }
-                    return cmd;
+                    return command;
                 }
             case first_dash:
                 {
-                    unsigned cmd = this->next_dash_vertex(x, y);
-                    if(cmd != path_cmd_line_to){
-                        cmd = path_cmd_stop;
+                    unsigned command = this->next_dash_vertex(x, y);
+                    if(command != path_cmd_line_to){
+                        command = path_cmd_stop;
                     }else if(m_status == stop){ // if looped
                         // this is the case when the whole closed path is covered by a single continuous dash,
                         // so we need to close the dash-path
-                        cmd = unsigned(path_cmd_end_poly) | unsigned(path_flags_close);
+                        command = unsigned(path_cmd_end_poly) | unsigned(path_flags_close);
                     }
-                    return cmd;
+                    return command;
                 }
             case dashes:
                 {
-                    unsigned cmd = this->next_dash_vertex(x, y);
+                    unsigned command = this->next_dash_vertex(x, y);
                     if(this->m_status == stop){ // if looped
                         if(this->first_dash_skept){
                             // the first dash has been skept in the beginning, so still need to return it in the end
@@ -271,7 +271,7 @@ namespace agg
                             this->init_state_vars();
                         }
                     }
-                    return cmd;
+                    return command;
                 }
             case stop:
                 cmd = path_cmd_stop;

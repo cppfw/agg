@@ -68,7 +68,7 @@ namespace agg
                 for(j = 0; j < m_diameter; j++)
                 {
                     sum +=     m_weight_array[j * image_subpixel_scale + i] = 
-                        iround(m_weight_array[j * image_subpixel_scale + i] * k);
+                        agg::int16(iround(m_weight_array[j * image_subpixel_scale + i] * k));
                 }
 
                 sum -= image_filter_scale;
@@ -81,7 +81,7 @@ namespace agg
                     int v = m_weight_array[idx * image_subpixel_scale + i];
                     if(v < image_filter_scale)
                     {
-                        m_weight_array[idx * image_subpixel_scale + i] += inc;
+                        m_weight_array[idx * image_subpixel_scale + i] += agg::int16(inc);
                         sum += inc;
                     }
                 }

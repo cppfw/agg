@@ -27,5 +27,5 @@ myci_declare_library(${name}
 if(MSVC)
     # MSVS issues warnings about "unsafe" functions like fopen().
     # Suppress these warnings because the code is legacy and cannot be easily maintained.
-    target_compile_definitions(my_app PRIVATE _CRT_SECURE_NO_WARNINGS)
+    target_compile_definitions(${name} PRIVATE _CRT_SECURE_NO_WARNINGS)
 endif()

@@ -14,9 +14,6 @@ myci_add_source_files(srcs
 )
 
 myci_declare_library(${name}
-    # TODO: fix warnings if any (for MSVC?)
-    NO_ALL_WARNINGS
-    NO_WARNINGS_AS_ERRORS
     SOURCES
         ${srcs}
     PUBLIC_INCLUDE_DIRECTORIES

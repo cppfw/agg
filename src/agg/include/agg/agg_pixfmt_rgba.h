@@ -1578,7 +1578,7 @@ namespace agg
         //--------------------------------------------------------------------
         AGG_INLINE void blend_pix(pixel_type* p, const color_type& c, unsigned cover)
         {
-            m_blender.blend_pix(p->c, c.r, c.g, c.b, c.a, cover);
+            m_blender.blend_pix(p->c, c.r, c.g, c.b, c.a, cover_type(cover));
         }
 
         //--------------------------------------------------------------------
@@ -1598,7 +1598,7 @@ namespace agg
                 }
                 else
                 {
-                    m_blender.blend_pix(p->c, c.r, c.g, c.b, c.a, cover);
+                    m_blender.blend_pix(p->c, c.r, c.g, c.b, c.a, cover_type(cover));
                 }
             }
         }

@@ -945,10 +945,10 @@ namespace agg
         {
             self_type ret;
             calc_type ik = uround(k * int(base_mask));
-            ret.r = value_type(lerp(r, c.r, ik));
-            ret.g = value_type(lerp(g, c.g, ik));
-            ret.b = value_type(lerp(b, c.b, ik));
-            ret.a = value_type(lerp(a, c.a, ik));
+            ret.r = lerp(r, c.r, value_type(ik));
+            ret.g = lerp(g, c.g, value_type(ik));
+            ret.b = lerp(b, c.b, value_type(ik));
+            ret.a = lerp(a, c.a, value_type(ik));
             return ret;
         }
 

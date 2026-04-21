@@ -706,8 +706,8 @@ namespace agg
         {
             self_type ret;
             calc_type ik = uround(k * int(base_scale));
-            ret.v = value_type(lerp(v, c.v, ik));
-            ret.a = value_type(lerp(a, c.a, ik));
+            ret.v = lerp(v, c.v, value_type(ik));
+            ret.a = lerp(a, c.a, value_type(ik));
             return ret;
         }
 

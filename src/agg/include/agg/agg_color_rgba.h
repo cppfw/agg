@@ -945,10 +945,10 @@ namespace agg
         {
             self_type ret;
             calc_type ik = uround(k * int(base_mask));
-            ret.r = lerp(r, c.r, ik);
-            ret.g = lerp(g, c.g, ik);
-            ret.b = lerp(b, c.b, ik);
-            ret.a = lerp(a, c.a, ik);
+            ret.r = value_type(lerp(r, c.r, ik));
+            ret.g = value_type(lerp(g, c.g, ik));
+            ret.b = value_type(lerp(b, c.b, ik));
+            ret.a = value_type(lerp(a, c.a, ik));
             return ret;
         }
 
@@ -973,10 +973,10 @@ namespace agg
             }
             else
             {
-                cr = r + mult_cover(c.r, cover);
-                cg = g + mult_cover(c.g, cover);
-                cb = b + mult_cover(c.b, cover);
-                ca = a + mult_cover(c.a, cover);
+                cr = r + mult_cover(c.r, cover_type(cover));
+                cg = g + mult_cover(c.g, cover_type(cover));
+                cb = b + mult_cover(c.b, cover_type(cover));
+                ca = a + mult_cover(c.a, cover_type(cover));
             }
             r = (value_type)((cr > calc_type(base_mask)) ? calc_type(base_mask) : cr);
             g = (value_type)((cg > calc_type(base_mask)) ? calc_type(base_mask) : cg);
@@ -1308,10 +1308,10 @@ namespace agg
             }
             else
             {
-                r += mult_cover(c.r, cover);
-                g += mult_cover(c.g, cover);
-                b += mult_cover(c.b, cover);
-                a += mult_cover(c.a, cover);
+                r += mult_cover(c.r, cover_type(cover));
+                g += mult_cover(c.g, cover_type(cover));
+                b += mult_cover(c.b, cover_type(cover));
+                a += mult_cover(c.a, cover_type(cover));
             }
             if (a > 1) a = 1;
             if (r > a) r = a;

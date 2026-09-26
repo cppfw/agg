@@ -22,6 +22,7 @@ myci_declare_library(${name}
         ../../src/${name}/include/${name}
     INSTALL_INCLUDE_DIRECTORIES
         ../../src/${name}/include/${name}
+    NO_FORMAT
 )
 
 if(MSVC)

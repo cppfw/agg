@@ -18,8 +18,12 @@ myci_declare_library(${name}
         ${srcs}
     PUBLIC_INCLUDE_DIRECTORIES
         ../../src/${name}/include
+
+    # WORKAROUND: for .cpp to be able to find its own header files because in agg headers live
+    #             in separate include directory but included with no any directory paths, just header file name.
     PRIVATE_INCLUDE_DIRECTORIES
         ../../src/${name}/include/${name}
+
     INSTALL_INCLUDE_DIRECTORIES
         ../../src/${name}/include/${name}
     NO_FORMAT
